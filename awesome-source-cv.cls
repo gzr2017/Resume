@@ -49,7 +49,7 @@
 % Dependences
 %A Few Useful Packages
 \RequirePackage[frenchb]{babel}
-\RequirePackage[utf8]{luainputenc}
+%\RequirePackage[utf8]{luainputenc}  % luatex
 \RequirePackage{fontspec} 					                 % for loading fonts
 \RequirePackage{url,parskip} 	    % other packages for formatting
 \RequirePackage[usenames,dvipsnames]{xcolor}
@@ -66,7 +66,8 @@
 \RequirePackage[skins]{tcolorbox}
 
 
-\DeclareUnicodeCharacter{00E9}{\'{e}}
+% \DeclareUnicodeCharacter{00E9}{\'{e}}  %luatex
+
 % Define default accent colors
 \definecolor{basecolor}{HTML}{000066}       %BLUE
 
@@ -116,7 +117,7 @@
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
 % Set the FontAwesome font to be up-to-date.
-\newfontfamily\FA[Path=fonts/]{FontAwesome}
+% \newfontfamily\FA[Path=fonts/]{FontAwesome}
 
 % Define font to use according to localFont option
 \ifundef{\@local}
@@ -152,6 +153,7 @@
 \newcommand{\linkedinSymbol}{\faLinkedin}
 \newcommand{\mobileSymbol}{\faMobilePhone}
 \newcommand{\githubSymbol}{\faGithub}
+\newcommand{\instagramSymbol}{\faInstagram}
 
 \newcommand\link[2]{\color{linkcolor}\href{#1}{#2}\color{Black} }
 \newcommand\important[1]{\textbf #1}
@@ -161,8 +163,17 @@
 \newcommand{\cvtag}[1]{%
   %\tikz[baseline]\node[anchor=base,draw=darkGrey!70,rounded corners=0.5ex,inner xsep=1ex,inner ysep =0.55ex,text height=1.3ex,text depth=.25ex]{#1};
 \begin{tikzpicture}
-	\node[anchor=base,draw=darkGrey!70,rounded corners=0.5ex,inner xsep=1ex,inner ysep =0.55ex,text height=1.3ex,text depth=.25ex]{#1};
+	\node[anchor=base,draw=darkGrey!70,rounded corners=0.5ex,inner xsep=1ex,inner ysep =0.4ex,text height=2ex,text depth=.25ex]{#1};
 \end{tikzpicture}	  
+}
+
+% Create a chinese tag
+% Usage: \cvtag{<tag label>}
+\newcommand{\cvtagcn}[1]{%
+	%\tikz[baseline]\node[anchor=base,draw=darkGrey!70,rounded corners=0.5ex,inner xsep=1ex,inner ysep =0.55ex,text height=1.3ex,text depth=.25ex]{#1};
+	\begin{tikzpicture}
+	\node[anchor=base,draw=darkGrey!70,rounded corners=0.5ex,inner xsep=1ex,inner ysep =0.4ex,text height=2ex,text depth=.25ex]{#1};
+	\end{tikzpicture}	  
 }
 
 % Render author's name
@@ -225,7 +236,7 @@
 % Render author's github (optional)
 % Usage: \github{<github-nick>}
 \newcommand*{\github}[1]{\sociallink{\githubSymbol}{https://www.github.com/#1}{github.com/#1}}           % Github icon + URL
-
+\newcommand*{\instagram}[1]{\sociallink{\instagramSymbol}{https://www.instagram.com/#1}{instagram.com/#1}}           % Instagram icon + URL
 % Render author's email (optional)
 % Usage: \email{<email adress>}
 \newcommand*{\email}[1]{\sociallink{\mailSymbol}{mailto:#1}{#1}}
@@ -294,20 +305,13 @@
 			\end{minipage}  	    
 		\ifdef{\@photodiameter}{
 			\begin{minipage}{\@photodiameter}
-%				\begin{tikzpicture}%
-%				\node[circle, text=white, minimum size=2.5cm,
-%				path picture={\node at (path picture bounding box.center){
-%						\includegraphics[width=2.5cm]{\@photo}
-%					};
-%				}]{ };
-%				\end{tikzpicture}		
-				\begin{tikzpicture}%
-				\node[text=white, minimum width=2.8cm, minimum height=2.8cm, %minimum size=2.8cm,
-				path picture={\node at (path picture bounding box.center){
-						\includegraphics[width=2.5cm]{\@photo}
-					};
-				}]{ };
-				\end{tikzpicture}			
+			      \begin{tikzpicture}%
+					\node[circle, text=white, minimum size=2.5cm,
+						path picture={\node at (path picture bounding box.center){
+							\includegraphics[width=2.5cm]{\@photo}
+						};
+					}]{ };
+			      \end{tikzpicture}				
 			\end{minipage} 			
 %      \begin{minipage}{\@photodiameter}
 %      	\tikz\path[fill overzoom image={\@photo}]circle[radius=0.5\linewidth];
@@ -359,6 +363,17 @@
   \end{longtable}
 }
 
+
+% Render an experience in the experiences environment
+% Usage: 
+% \tags {<Technology list>}
+
+\newcommand\tags[1]{
+	\foreach \n in {#1}{\cvtagcn{\n}} 
+}
+
+
+
 % Render an experience in the experiences environment
 % Usage: 
 % \experience
@@ -392,5 +407,6 @@
                    	\end{minipage}										\\*
                  & \footnotesize{\foreach \n in {#9}{\cvtag{\n}}} 	\\
   }
+
 
 \newcommand\emptySeparator{\multicolumn{2}{c}{}\\}
