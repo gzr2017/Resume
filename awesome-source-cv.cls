@@ -69,7 +69,7 @@
 % \DeclareUnicodeCharacter{00E9}{\'{e}}  %luatex
 
 % Define default accent colors
-\definecolor{basecolor}{HTML}{000066}       %BLUE
+\definecolor{basecolor}{HTML}{434396}       %BLUE
 
 \ifundef{\@green} {
   \ifundef{\@red} {
