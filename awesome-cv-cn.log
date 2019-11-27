@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.12)  27 NOV 2019 14:41
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.12)  27 NOV 2019 14:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/gzr1997/Downloads/awesome-latex-cv-zh-cn/awesome-cv-cn
-(/Users/gzr1997/Downloads/awesome-latex-cv-zh-cn/awesome-cv-cn.tex
+**/Users/gzr1997/Documents/Code/Resume/awesome-cv-cn
+(/Users/gzr1997/Documents/Code/Resume/awesome-cv-cn.tex
 LaTeX2e <2018-12-01>
 (./awesome-source-cv.cls
 Document Class: awesome-source-cv 2016/11/05 v1.6.1 Awesome Source CV Class
@@ -1009,15 +1009,8 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
  (./awesome-cv-cn.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 51.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 51.
-
-
-Package rerunfilecheck Warning: File `awesome-cv-cn.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `awesome-cv-cn.out':
-(rerunfilecheck)             Before: 7E10D8CCBCA273F54C03ADBCA7618237
-(rerunfilecheck)             After:  05CF0059EFA45B7827AB2A896BF6231E.
+Package rerunfilecheck Info: File `awesome-cv-cn.out' has not changed.
+(rerunfilecheck)             Checksum: 05CF0059EFA45B7827AB2A896BF6231E.
  )
 (\end occurred inside a group at level 1)
 
@@ -1025,11 +1018,11 @@ Package rerunfilecheck Info: Checksums for `awesome-cv-cn.out':
 ### bottom level 
 Here is how much of TeX's memory you used:
  38284 strings out of 492916
- 788857 string characters out of 6133344
- 949811 words of memory out of 5000000
+ 788824 string characters out of 6133344
+ 949760 words of memory out of 5000000
  41880 multiletter control sequences out of 15000+600000
  532994 words of font info for 62 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
- 62i,11n,87p,1246b,1003s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,11n,87p,1235b,1003s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on awesome-cv-cn.pdf (2 pages).
